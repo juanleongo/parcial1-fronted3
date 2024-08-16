@@ -8,9 +8,16 @@ function Formulario() {
 
   const handleSubmit = (e) => {
     
-
-    e.preventDefault();
-    setEnviar({ nombre: nombre, marca: marca });
+    if (nombre.length <= 3 || marca.length <= 6 ){
+      
+      e.preventDefault();
+      alert('por favor ingresar mas caracteres ');
+    }else{
+      e.preventDefault();
+      setEnviar({ nombre: nombre, marca: marca });
+    }
+    
+    
   };
 
   return (
